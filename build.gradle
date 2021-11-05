@@ -42,7 +42,7 @@ task createDockerFile(type: Dockerfile) {
 	from 'openjdk:11'
 	copyFile('libs/*-SNAPSHOT.jar', '/tmp/sb-docker.jar')
 	entryPoint 'java'
-	defaultCommand '-jar', '/app/sb-docker.jar'
+	defaultCommand '-jar', '/tmp/sb-docker.jar'
 	exposePort 8080
 }
 
